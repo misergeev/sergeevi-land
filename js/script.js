@@ -1,4 +1,15 @@
 $(document).ready(function() {
+  var header = $('.header').clone();
+  $('.header__fixed').html(header);
+
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 150) {
+      $('.header__fixed').addClass('show');
+    } else {
+      $('.header__fixed').removeClass('show');
+    }
+  });
+
   $(document).on('click', '.js-scroll-down', function() {
     $('html, body').animate({
       scrollTop: $('.gardens').offset().top - 150

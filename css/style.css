@@ -38,8 +38,8 @@ body,
 html {
     height: 100%;
     width: 100%;
-    line-height: 120%;
-    font-size: 18px;
+    line-height: 1.5;
+    font-size: 16px;
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -221,7 +221,7 @@ h6 {
     transform: translateX(-50%);
     z-index: 100;
     width: 150px;
-    padding: 24px 0 0 0;
+    padding: 23px 0 0 0;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease 0s;
@@ -258,6 +258,23 @@ h6 {
 .header__nav-sub ul li a {
     display: block;
     line-height: 130%;
+}
+
+.header__fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    transform: translateY(-350px);
+    transition: transform 0.3s ease 0s;
+    pointer-events: none;
+}
+
+.header__fixed.show {
+    transform: translateY(0);
+    pointer-events: all;
 }
 
 /* Footer */
@@ -344,6 +361,53 @@ h6 {
     background: url('../img/footer/7-luch.svg') center center / contain no-repeat;
 }
 
+/* Elements */
+
+h2 {
+    font-size: 30px;
+    line-height: 1.5;
+}
+
+.link__center {
+    width: max-content;
+    margin: 40px auto 80px auto;
+}
+
+.link {
+    position: relative;
+    color: #363636;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color 0.3s ease 0s;
+    cursor: pointer;
+}
+
+.link__big {
+    font-size: 24px;
+}
+
+.link:hover {
+    color: #b8a471;
+    text-decoration: none;
+}
+
+.link:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #1f1f1f;
+    transition: all 0.3s ease 0s;
+}
+
+.link:hover:after {
+    background: #b8a471;
+    width: 0;
+    left: 50%;
+}
+
 /* Intro */
 
 .intro {
@@ -398,15 +462,33 @@ h6 {
 
 .intro__button-down {
     position: absolute;
-    bottom: 30px;
+    bottom: 50px;
     left: 50%;
-    transform: translateX(-50%) rotateZ(45deg);
+    transform: translateX(-50%);
     width: 28px;
     height: 28px;
+    cursor: pointer; 
+    
+}
+
+.intro__button-down:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: rotateZ(45deg);
+    width: 100%;
+    height: 100%;
     border: 2px solid #ffffff;
     border-top: none;
     border-left: none;
-    cursor: pointer;
+    transition: transform 0.3s ease 0s;
+}
+
+.intro__button-down:hover:before {
+    transform: translateY(10px) rotateZ(45deg);
 }
 
 /* Gardens */
@@ -445,3 +527,134 @@ h6 {
     height: 100%;
 }
 
+/* About */
+
+.about {
+    position: relative;
+}
+
+.about__background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(50% - 20px);
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.about__background-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.about__info {
+    position: relative;
+    height: 700px;
+}
+
+.about__info-inner {
+    position: absolute;
+    top: 46%;
+    left: 0;
+    transform: translateY(-50%);
+    max-width: 415px;
+}
+
+.about__info-inner h2 {
+    margin: 0 0 20px 0;
+}
+
+.about__info-inner p {
+    font-size: 16px;
+}
+
+/* Awards */
+
+.awards__item {
+    margin: 40px 0 0 0;
+    border-bottom: 1px solid #c4c4c4
+}
+
+.awards__item-top,
+.awards__item-middle,
+.awards__item-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 24px 0;
+}
+
+.awards__item-bottom {
+    margin: 0 0 40px 0;
+}
+
+.awards__item-left {
+    width: calc(50% - 20px);
+    padding: 0 80px 0 0;
+}
+
+.awards__item-right {
+    width: calc(50% - 20px);
+}
+
+.awards__item-right--inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.awards__item-title {
+    font-size: 20px;
+}
+
+/* Articles */
+
+.articles__wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 32px 0 0 0;
+}
+
+.articles__item {
+    position: relative;
+    width: calc(50% - 20px);
+}
+
+.articles__img {
+    width: 100%;
+}
+
+.articles__title {
+    font-size: 20px;
+    margin: 24px 0 16px 0;
+}
+
+.articles__descr {
+    margin: 0 0 32px 0;
+}
+
+.articles__link-absolute {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.articles__item:hover .articles__link {
+    color: #b8a471;
+    text-decoration: none;
+}
+
+.articles__item:hover .articles__link:after {
+    background: #b8a471;
+    width: 0;
+    left: 50%;
+}
