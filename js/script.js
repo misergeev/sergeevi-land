@@ -29,4 +29,28 @@ $(document).ready(function() {
       scrollTop: $('html').offset().top
     }, 1000);
   });
+
+  function gardensShowItem() {
+    $('.gardens__wrapper .gardens__item').each(function() {
+      if ($(window).scrollTop() >= $(this).offset().top - ($(window).height() - 250)) {
+        $(this).addClass('show');
+      }
+    });
+  }
+
+  gardensShowItem();
+  
+  $(window).scroll(function() {
+    gardensShowItem();
+  });
+
+  $(document).on('click', '.js-more-gardens', function() {
+    var moreGardens = $('.gardens__more').html();
+    $('.gardens__wrapper').append(moreGardens);
+    gardensShowItem();
+    $('.gardens__more').remove();
+    $(this).parent().fadeOut(300);
+    $('.gardens').css('margin-bottom', 116);
+  });
+
 });

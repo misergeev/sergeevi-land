@@ -2,6 +2,8 @@
 *.svg
 *.webp
 *.png
+*.zip
 
 img/
 video/
+sergeev/

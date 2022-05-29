@@ -426,7 +426,7 @@ h2 {
     min-height: 100%;
 }
 
-.intro:before {
+/* .intro:before {
     content: '';
     position: absolute;
     top: 0;
@@ -435,7 +435,7 @@ h2 {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.3);
-}
+} */
 
 .intro .container {
     position: relative;
@@ -495,6 +495,7 @@ h2 {
 
 .gardens__item {
     position: relative;
+    z-index: 100;
     display: flex;
     align-items: flex-end;
     width: 100%;
@@ -504,6 +505,17 @@ h2 {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    transform: translateY(-150px);
+    opacity: 0;
+    transition:
+        opacity 0.8s ease 0s,
+        transform 0.5s ease 0s;
+}
+
+.gardens__item.show {
+    z-index: 99;
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .gardens__title {
@@ -513,6 +525,10 @@ h2 {
     font-size: 40px;
     line-height: 120%;
     transition: transform 0.7s ease 0s;
+}
+
+.gardens__title sup {
+    font-size: 20px;
 }
 
 .gardens__item:hover .gardens__title {
@@ -525,6 +541,10 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.gardens__more .gardens__item {
+    display: none;
 }
 
 /* About */
