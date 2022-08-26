@@ -49,7 +49,9 @@ $(document).ready(function() {
   $(document).on('click', '.js-more-gardens', function() {
     var moreGardens = $('.gardens__more').html();
     $('.gardens__wrapper').append(moreGardens);
+
     gardensShowItem();
+
     $('.gardens__more').remove();
     $(this).parent().fadeOut(300);
     $('.gardens').css('margin-bottom', 116);
@@ -101,7 +103,6 @@ $(document).ready(function() {
           juxtaposeHeight = Math.floor(juxtaposeHeight);
           $(this).css('height', juxtaposeHeight);
         });
-        
       }
     }, 300);
 
@@ -121,18 +122,20 @@ $(document).ready(function() {
     setTimeout(function() {
       $('.js-garden-tab[data-tab="gallery"]').trigger('click');
     }, 1000);
-
   });
 
-/*   $('.gardensDetail__gallery').isotope({
-    itemSelector: 'img',
-    layoutMode: 'masonry',
-    percentPosition: true,
-    masonry: {
-      gutter: 10,
-      horizontalOrder: true,
-    }
-  }); */
+  $(document).on('click', '.js-articles-item', function() {
+    $(this).next().fadeIn(300, function() {
+      $(this).addClass('show');
+    });
+  });
 
+  $(document).on('click', '.js-articles-body-close', function() {
+    var articlesBody = $(this).parents('.articles__body');
 
+    articlesBody.removeClass('show');
+    setTimeout(function() {
+      articlesBody.fadeOut(300);
+    }, 300);
+  });
 });
