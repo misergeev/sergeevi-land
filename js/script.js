@@ -74,7 +74,7 @@ $(document).ready(function() {
 
       if ($this.attr('data-tab') == 'gallery') {
         $('.gardensDetail__gallery').isotope({
-          itemSelector: 'img',
+          itemSelector: 'a',
           layoutMode: 'masonry',
           percentPosition: true,
           masonry: {
@@ -82,6 +82,26 @@ $(document).ready(function() {
             horizontalOrder: true,
           }
         });
+
+        $('.gardensDetail__gallery').lightGallery({
+          thumbnail: true,
+          fullScreen: false,
+          zoom: false,
+          share: false,
+          rotate: false,
+          autoplay: false,
+          hash: false,
+          showThumbByDefault: false,
+        }); 
+      }
+
+      if ($this.attr('data-tab') == 'history') {
+        $('.juxtapose').each(function() {
+          var juxtaposeHeight = $(this).width() / $(this).data('ratio');
+          juxtaposeHeight = Math.floor(juxtaposeHeight);
+          $(this).css('height', juxtaposeHeight);
+        });
+        
       }
     }, 300);
 
@@ -104,7 +124,7 @@ $(document).ready(function() {
 
   });
 
-  $('.gardensDetail__gallery').isotope({
+/*   $('.gardensDetail__gallery').isotope({
     itemSelector: 'img',
     layoutMode: 'masonry',
     percentPosition: true,
@@ -112,7 +132,7 @@ $(document).ready(function() {
       gutter: 10,
       horizontalOrder: true,
     }
-  });
+  }); */
 
 
 });

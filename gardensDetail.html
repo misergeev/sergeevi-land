@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/jquery.photoswipe.min.css">
     <link rel="stylesheet" href="./css/jquery.photoswipe.default-skin.min.css">
     <link rel="stylesheet" href="./css/lightgallery.min.css">
+    <link rel="stylesheet" href="./css/juxtapose.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -62,11 +63,11 @@
             </div>
             <div class="gardensDetail__tabs">
                 <div class="container">
-                    <div class="gardensDetail__tabs-wrapper">
+                    <div class="gardensDetail__tabs-wrapper gardensDetail__tabs-count-5">
                         <div class="gardensDetail__tabs-item js-garden-tab active" data-tab="garden">Сад</div>
                         <div class="gardensDetail__tabs-item js-garden-tab" data-tab="gallery">Галерея</div>
                         <div class="gardensDetail__tabs-item js-garden-tab" data-tab="garden">Динамика</div>
-                        <div class="gardensDetail__tabs-item js-garden-tab">История</div>
+                        <div class="gardensDetail__tabs-item js-garden-tab" data-tab="history">История</div>
                         <div class="gardensDetail__tabs-item js-garden-tab" data-tab="awards">Награды</div>
                     </div>
                 </div>
@@ -96,26 +97,242 @@
                 <div class="gardensDetail__content-item">
                     <div class="container">
                         <div class="gardensDetail__gallery">
-                            <img src="./img/gardens/gallery/1.jpg" alt="">
-                            <img src="./img/gardens/gallery/2.jpg" alt="">
-                            <img src="./img/gardens/gallery/3.jpg" alt="">
-                            <img src="./img/gardens/gallery/4.jpg" alt="">
-                            <img src="./img/gardens/gallery/5.jpg" alt="">
-                            <img src="./img/gardens/gallery/6.jpg" alt="">
-                            <img src="./img/gardens/gallery/7.jpg" alt="">
-                            <img src="./img/gardens/gallery/8.jpg" alt="">
-                            <img src="./img/gardens/gallery/9.jpg" alt="">
-                            <img src="./img/gardens/gallery/10.jpg" alt="">
-                            <img src="./img/gardens/gallery/11.jpg" alt="">
-                            <img src="./img/gardens/gallery/12.jpg" alt="">
+                            <a href="./img/gardens/gallery/1.jpg">
+                                <img src="./img/gardens/gallery/1.jpg" alt="">
+                            </a>
+                            <a href="./img/gardens/gallery/2.jpg">
+                                <img src="./img/gardens/gallery/2.jpg" alt="">
+                            </a>
+                            <a href="./img/gardens/gallery/3.jpg">
+                                <img src="./img/gardens/gallery/3.jpg" alt="">
+                            </a>
+                            <a href="./img/gardens/gallery/4.jpg">
+                                <img src="./img/gardens/gallery/4.jpg" alt="">
+                            </a>
+                            <a href="./img/gardens/gallery/5.jpg">
+                                <img src="./img/gardens/gallery/5.jpg" alt="">
+                            </a>
+                            <a href="./img/gardens/gallery/6.jpg">
+                                <img src="./img/gardens/gallery/6.jpg" alt="">
+                            </a>
+                            <a href="./img/gardens/gallery/7.jpg">
+                                <img src="./img/gardens/gallery/7.jpg" alt="">
+                            </a>
+                            <a href="./img/gardens/gallery/8.jpg">
+                                <img src="./img/gardens/gallery/8.jpg" alt="">
+                            </a>
+                            <a href="./img/gardens/gallery/9.jpg">
+                                <img src="./img/gardens/gallery/9.jpg" alt="">
+                            </a>
+                            <a href="./img/gardens/gallery/10.jpg">
+                                <img src="./img/gardens/gallery/10.jpg" alt="">
+                            </a>
+                            <a href="./img/gardens/gallery/11.jpg">
+                                <img src="./img/gardens/gallery/11.jpg" alt="">
+                            </a>
+                            <a href="./img/gardens/gallery/12.jpg">
+                                <img src="./img/gardens/gallery/12.jpg" alt="">
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="gardensDetail__content-item">
-
+                    <div class="container">
+                        <div class="dynamics">
+                            <video class="dynamics__item" controls muted preload="auto">
+                                <source src="./video/videoplayback.mp4" type="video/mp4">
+                            </video>
+                            <video class="dynamics__item" controls muted preload="auto">
+                                <source src="./video/videoplayback (1).mp4" type="video/mp4">
+                            </video>
+                            <video class="dynamics__item" controls muted preload="auto">
+                                <source src="./video/videoplayback (2).mp4" type="video/mp4">
+                            </video>
+                            <video class="dynamics__item" controls muted preload="auto">
+                                <source src="./video/videoplayback (3).mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
                 </div>
                 <div class="gardensDetail__content-item">
-
+                    <div class="container">
+                        <div class="history">
+                            <div class="history__look">
+                                <div class="history__look-title">Вид 1</div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-1/1.webp" alt="">
+                                    <p>
+                                        Исходная ситуация.
+                                        <br><br>
+                                        Пожелания заказчика: естественность, лаконичность, крупные формы, выраженный, но не измельченный рельеф, невидимость руки дизайнера
+                                    </p>
+                                </div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-1/2.webp" alt="">
+                                    <p>
+                                        Начинаем.
+                                    </p>
+                                </div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-1/3.webp" alt="">
+                                    <p>
+                                        Большие деревья растут долго, поэтому сажать их нужно быстро. Насколько это возможно. Мы будем делать посадки на нужных для будущего рельефа высотах, насыпая в соответствующих местах земляные кучи. Для этого используем освобождающийся из-под фундамента грунт. Задуманный рельеф подведем к деревьям позже.
+                                    </p>
+                                </div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-1/4.webp" alt="">
+                                    <p>
+                                        Первая сосна. Пользуемся техникой фирмы, специализирующейся на крупномерных посадках.
+                                    </p>
+                                </div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-1/5.webp" alt="">
+                                    <p>
+                                        Продолжаем посадки — появилось несколько групп сосен.
+                                    </p>
+                                </div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-1/6.webp" alt="">
+                                    <p>
+                                        Добавились лиственницы, ели и еще несколько сосен.
+                                    </p>
+                                </div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-1/7.webp" alt="">
+                                    <p>
+                                        Весна. Посажены пихты.
+                                    </p>
+                                </div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-1/8.webp" alt="">
+                                    <p>
+                                        Добавляем яблони сибирские. Справа виден кедр (сосна сибирская).
+                                    </p>
+                                </div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-1/9.webp" alt="">
+                                    <p>
+                                        На соседнем участке строится дом. Он удачный для нас — в сторону сада не смотрят окна, мы будем видеть лишь темный монотонный скат крыши. На это мы и рассчитывали — видели проект с самого начала.
+                                    </p>
+                                </div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-1/10.webp" alt="">
+                                    <p>
+                                        Крупномеры посажены. Грунт сел. Начинаем формировать рельеф начисто. На окончательном рельефе продолжаем посадки «ручных» деревьев.
+                                    </p>
+                                </div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-1/11.webp" alt="">
+                                    <p>
+                                        Продолжаем посадки и работу с рельефом. Сажаем массивы кустарников.
+                                    </p>
+                                </div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-1/12.webp" alt="">
+                                    <p>
+                                        Работаем с рельефом, по мере готовности закрывая поверхность газонной дерниной.
+                                    </p>
+                                </div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-1/13.webp" alt="">
+                                    <p>
+                                        Заканчиваем.
+                                    </p>
+                                </div>
+                                <div class="beforeAfter">
+                                    <div class="juxtapose" data-ratio="1.92">
+                                        <img src="./img/history/gardens-1/look-1/slider/1.png" />
+                                        <img src="./img/history/gardens-1/look-1/slider/2.png" />
+                                    </div>
+                                    <div class="beforeAfter__bottom">
+                                        <div class="beforeAfter__bottom-before">2009 г.</div>
+                                        <div class="beforeAfter__bottom-after">2016 г.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="history__look">
+                                <div class="history__look-title">Вид 2</div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-2/1.webp" alt="">
+                                    <p>
+                                        Исходная ситуация
+                                        <br><br>
+                                        Пожелания заказчика: естественность, лаконичность, крупные формы, выраженный, но не измельченный рельеф, невидимость руки дизайнера.
+                                    </p>
+                                </div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-2/2.webp" alt="">
+                                    <p>
+                                        Строится фундамент дома. Высвободился большой объем грунта, часть его уйдет на обратную засыпку. Еще до начала строительства при помощи техники специализированной фирмы начаты посадки крупномерных деревьев (ели в правой части фото). Машина-пересадчик позволяет брать дерево с комом 1,6 метра в диаметре. Тополя, стоящие перед будущим фасадом — лишние. Позже мы рассчитываем пересадить их на другие места этой же машиной.
+                                    </p>
+                                </div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-2/3.webp" alt="">
+                                    <p>
+                                        Технология зимней посадки позволит использовать деревья с еще более крупным комом, чем обеспечивал пересадчик. Делаем разбивку — определяем будущее положение двух практически взрослых шаровидных ив.
+                                    </p>
+                                </div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-2/4.webp" alt="">
+                                    <p>
+                                        Теперь ивы на своих местах.
+                                    </p>
+                                </div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-2/5.webp" alt="">
+                                    <p>
+                                        Весна. Снег сходит. Кроны ив приобрели зеленоватый оттенок. Дом теперь уже можно видеть в его основных контурах. Автор дома — архитектор Дмитрий Позаренко.
+                                    </p>
+                                </div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-2/6.webp" alt="">
+                                    <p>
+                                        Начинаем формировать черновой рельеф. Грубую работу с большими объемами грунта делаем, используя технику.
+                                    </p>
+                                </div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-2/7.webp" alt="">
+                                    <p>
+                                        Доводим черновой рельеф до нужной формы вручную, используя мотоблок, лопаты и грабли.
+                                    </p>
+                                </div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-2/8.webp" alt="">
+                                    <p>
+                                        Рельеф начерно сформирован. Теперь по нему электрики прокладывают кабель для индивидуальной подсветки деревьев, поливальщики закапывают трубы системы автополива, строители, тем временем, заканчивают отмостку, а мы — пересаживаем тополя и по границе дольнего холма сажаем массив бедренцеволистной розы.
+                                    </p>
+                                </div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-2/9.webp" alt="">
+                                    <p>
+                                        Формируем чистовой рельеф. Ручная работа. На этом этапе незначительные подвижки грунта важны для зрительного впечатления.
+                                    </p>
+                                </div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-2/10.webp" alt="">
+                                    <p>
+                                        В несколько приемов готовим поверхность грунта и укладываем газонную дернину.
+                                    </p>
+                                </div>
+                                <div class="history__look-item">
+                                    <img src="./img/history/gardens-1/look-2/11.webp" alt="">
+                                    <p>
+                                        Работа велась этапами в течении четырех сезонов. Теперь укладка газона закончена. Скоро первое скашивание!
+                                    </p>
+                                </div>
+                                <div class="beforeAfter">
+                                    <div class="juxtapose" data-ratio="2.52631">
+                                        <img src="./img/history/gardens-1/look-2/slider/1.png" />
+                                        <img src="./img/history/gardens-1/look-2/slider/2.jpg" />
+                                    </div>
+                                    <div class="beforeAfter__bottom">
+                                        <div class="beforeAfter__bottom-before">2009 г.</div>
+                                        <div class="beforeAfter__bottom-after">2016 г.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="gardensDetail__content-item">
                     <div class="container">
@@ -257,6 +474,7 @@
     <script src="./js/jquery.photoswipe.min.js"></script>
     <script src="./js/isotope.pkgd.min.js"></script>
     <script src="./js/lightgallery.min.js"></script>
+    <script src="./js/juxtapose.min.js"></script>
     <script src="./js/script.js"></script>
     <script>
         $(document).ready(function() {
