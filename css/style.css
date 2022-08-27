@@ -2,9 +2,23 @@
 @font-face {
     font-family: 'MazzardH';
     font-style: normal;
+    font-weight: 300;
+    font-display: fallback;
+    src: url('../fonts/MazzardH-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'MazzardH';
+    font-style: normal;
     font-weight: 400;
     font-display: fallback;
     src: url('../fonts/MazzardH-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'MazzardH';
+    font-style: normal;
+    font-weight: 600;
+    font-display: fallback;
+    src: url('../fonts/MazzardH-SemiBold.ttf') format('truetype');
 }
 /* ===== Обнуление стилей ===== */
 * {
@@ -890,12 +904,13 @@ h3 {
 .articles__wrapper {
     display: flex;
     justify-content: space-between;
-    margin: 32px 0 0 0;
+    margin: 32px 0 -90px 0;
 }
 
 .articles__item {
     position: relative;
     width: calc(50% - 20px);
+    margin-bottom: 90px;
     cursor: pointer;
 }
 
@@ -945,6 +960,7 @@ h3 {
     height: 100%;
     background: #ffffff;
     cursor: auto;
+    overflow: auto;
 }
 
 .articles__body .container {
@@ -956,7 +972,7 @@ h3 {
     top: 0;
     right: 0;
     left: 0;
-    padding: 18px 0;
+    padding: 18px 17px 18px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: saturate(180%) blur(10px);
@@ -1006,4 +1022,22 @@ h3 {
 .articles__body-banner {
     width: 100%;
     margin-top: 30px;
+}
+
+.articles__body-text {
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.55;
+}
+
+.articles__body-text figure img {
+    max-width: 100%;
+}
+
+.articles__body-text figcaption  {
+    margin-top: 14px;
+    opacity: .5;
+    font-size: 18px;
+    font-style: italic;
 }

@@ -2,12 +2,17 @@ $(document).ready(function() {
   var header = $('.header').clone();
   $('.header__fixed').html(header);
 
-  $(window).scroll(function() {
+  function showHeaderFix() {
     if ($(this).scrollTop() > 150) {
       $('.header__fixed').addClass('show');
     } else {
       $('.header__fixed').removeClass('show');
     }
+  }
+
+  showHeaderFix();
+  $(window).scroll(function() {
+    showHeaderFix();
   });
 
   $(document).on('click', '.js-scroll-down', function() {
@@ -125,6 +130,7 @@ $(document).ready(function() {
   });
 
   $(document).on('click', '.js-articles-item', function() {
+    $('body').addClass('body-overflow-hidden');
     $(this).next().fadeIn(300, function() {
       $(this).addClass('show');
     });
@@ -135,6 +141,7 @@ $(document).ready(function() {
 
     articlesBody.removeClass('show');
     setTimeout(function() {
+      $('body').removeClass('body-overflow-hidden');
       articlesBody.fadeOut(300);
     }, 300);
   });
