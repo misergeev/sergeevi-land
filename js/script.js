@@ -122,11 +122,11 @@ $(document).ready(function() {
   $(document).on('click', '.js-garden-gallery', function() {
     $('body, html').animate({
       scrollTop: $('.gardensDetail__tabs').offset().top - 150
-    }, 1000);
+    }, 10);
 
     setTimeout(function() {
       $('.js-garden-tab[data-tab="gallery"]').trigger('click');
-    }, 1000);
+    }, 200);
   });
 
   $(document).on('click', '.js-articles-item', function() {
