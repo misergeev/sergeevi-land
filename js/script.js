@@ -62,6 +62,7 @@ $(document).ready(function() {
     $('.gardens').css('margin-bottom', 116);
   });
 
+  // Табы на детальной транице сада
   $(document).on('click', '.js-garden-tab', function() {
     var $this = $(this),
         tabIndex = $this.index();
@@ -119,6 +120,7 @@ $(document).ready(function() {
     },700);
   });
 
+  // Кнопка на детальной странице сада для перехода в галерею
   $(document).on('click', '.js-garden-gallery', function() {
     $('body, html').animate({
       scrollTop: $('.gardensDetail__tabs').offset().top - 150
@@ -129,6 +131,7 @@ $(document).ready(function() {
     }, 200);
   });
 
+  // Открытие статьи
   $(document).on('click', '.js-articles-item', function() {
     $('body').addClass('body-overflow-hidden');
     $(this).next().fadeIn(300, function() {
@@ -136,13 +139,37 @@ $(document).ready(function() {
     });
   });
 
+  // закрытие статьи
   $(document).on('click', '.js-articles-body-close', function() {
     var articlesBody = $(this).parents('.articles__body');
-
     articlesBody.removeClass('show');
+
     setTimeout(function() {
       $('body').removeClass('body-overflow-hidden');
       articlesBody.fadeOut(300);
     }, 300);
   });
+
+  if ($('.aboutSlider__wrapper').length) {
+		var aboutSlider = new Swiper($('.aboutSlider__wrapper'), {
+			direction: 'horizontal',
+			speed: 400,
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      spaceBetween: 100,
+			loop: true,
+      slideToClickedSlide: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<div class="' + className + '"><span></span></div>';
+        },
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+		});
+	}
 });

@@ -9,6 +9,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="./css/lightgallery.min.css">
     <link rel="stylesheet" href="./css/juxtapose.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -135,7 +136,10 @@
 
         <section class="aboutBanner" style="background-image: url('./img/about/2.jpg')">
             <div class="container">
-
+                <div class="aboutBanner__wrapper">
+                    <h2>Главное наше высказывание&nbsp;— наши сады</h2>
+                    <p>Живопись, музыку, архитектуру и,&nbsp;конечно&nbsp;же,&nbsp;сад, нельзя пересказать словами. Поэтому они и&nbsp;существуют. И&nbsp;поэтому существуем мы&nbsp;— люди, занимающиеся садовым искусством.</p>
+                </div>
             </div>
         </section>
 
@@ -148,6 +152,34 @@
                     <div class="aboutText__item">
                         Хотя сад и нельзя заменить словами, но обсуждать проблемы ландшафтной архитектуры и ландшафтного дизайна не только возможно, но и, конечно, необходимо. Наши «слова», наши подходы к постановкам вопросов, наши принципиальные позиции можно найти в разделе <a class="link" href="#">«статьи»</a>. Будем рады, если вы почитаете — они интересные.
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="aboutSlider">
+            <div class="container">
+                <div class="aboutSlider__wrapper">
+                    <div class="swiper-wrapper">
+                        <div class="aboutSlider__item swiper-slide" style="background-image: url('./img/about/slider/1.jpg');"></div>
+                        <div class="aboutSlider__item swiper-slide" style="background-image: url('./img/about/slider/2.jpg');"></div>
+                        <div class="aboutSlider__item swiper-slide" style="background-image: url('./img/about/slider/3.jpg');"></div>
+                        <div class="aboutSlider__item swiper-slide" style="background-image: url('./img/about/slider/4.jpg');"></div>
+                        <div class="aboutSlider__item swiper-slide" style="background-image: url('./img/about/slider/5.jpg');"></div>
+                        <div class="aboutSlider__item swiper-slide" style="background-image: url('./img/about/slider/6.jpg');"></div>
+                    </div>
+                    <div class="aboutSlider__button swiper-button-next">
+                        <svg role="presentation" focusable="false" style="display: block" viewBox="0 0 9.3 17" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>Right</desc>
+                            <polyline fill="none" stroke="#b8a471" stroke-linejoin="butt" stroke-linecap="butt" stroke-width="1" points="0.5,0.5 8.5,8.5 0.5,16.5"></polyline>
+                        </svg>
+                    </div>
+                    <div class="aboutSlider__button swiper-button-prev">
+                        <svg role="presentation" focusable="false" style="display: block" viewBox="0 0 9.3 17" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>Left</desc>
+                            <polyline fill="none" stroke="#b8a471" stroke-linejoin="butt" stroke-linecap="butt" stroke-width="1" points="0.5,0.5 8.5,8.5 0.5,16.5"></polyline>
+                        </svg>
+                    </div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </section>
@@ -204,6 +236,7 @@
     <script src="./js/isotope.pkgd.min.js"></script>
     <script src="./js/lightgallery.min.js"></script>
     <script src="./js/juxtapose.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>

@@ -453,7 +453,7 @@ h3 {
 .link:after {
     content: '';
     position: absolute;
-    bottom: -4px;
+    bottom: -3px;
     left: 0;
     width: 100%;
     height: 1px;
@@ -1046,12 +1046,25 @@ h3 {
 }
 
 .aboutBanner {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
     width: 100%;
     height: 80vh;
     margin: 80px 0 100px 0;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.aboutBanner__wrapper {
+    max-width: 560px;
+    margin-bottom: 80px;
+    color: #FFFFFF;
+}
+
+.aboutBanner__wrapper p {
+    margin-top: 40px;
 }
 
 .aboutText__wrapper {
@@ -1062,6 +1075,108 @@ h3 {
 
 .aboutText__item {
     width: calc(50% - 20px);
+}
+
+.aboutSlider {
+    margin: 100px 0 70px 0;
+    overflow: hidden;
+}
+
+.aboutSlider__wrapper {
+    position: relative;
+    height: 644px;
+    padding: 0 100px 44px 100px;
+}
+
+.aboutSlider__item {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    opacity: 0.3;
+    transition: opacity 0.3s ease 0s;
+}
+
+.aboutSlider__item.swiper-slide-active {
+    cursor: default;
+    opacity: 1;
+}
+
+.aboutSlider__wrapper .swiper-pagination {
+    bottom: -7px;
+}
+
+.aboutSlider__wrapper .swiper-pagination-bullet {
+    width: 18px;
+    height: 28px;
+    margin: 0 !important;
+    padding: 10px 5px;
+    background: none;
+    border-radius: 0;
+    opacity: 1;
+}
+
+.aboutSlider__wrapper .swiper-pagination-bullet span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #CCCCCC;
+    border-radius: 50%;
+    transition: background 0.3s ease 0s;
+}
+
+.aboutSlider__wrapper .swiper-pagination-bullet:hover span {
+    background: #B8A471;
+}
+
+.aboutSlider__wrapper .swiper-pagination-bullet-active span {
+    background: #B8A471;
+}
+
+.aboutSlider__button {
+    display: block;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 1px solid #B8A471;
+    transition: border-color 0.3s ease 0s;
+}
+
+.aboutSlider__button:hover {
+    border-color: #363636;
+}
+
+.aboutSlider__button:after {
+    display: none;
+}
+
+.aboutSlider__button svg {
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    width: 10px;
+}
+
+.aboutSlider__button svg polyline {
+    transition: stroke 0.3s ease 0s;
+}
+
+.aboutSlider__button:hover svg polyline {
+    stroke: #363636;
+}
+
+.aboutSlider__button.swiper-button-next {
+    right: 28px;
+}
+
+.aboutSlider__button.swiper-button-prev {
+    left: 28px;
+}
+
+.aboutSlider__button.swiper-button-prev svg {
+    transform: rotateZ(180deg);
+    left: 14px;
 }
 
 .aboutBottom {
