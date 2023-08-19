@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
           return '<div class="' + className + '"><span></span></div>';
         },
       },
-      
+
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -256,30 +256,4 @@ document.addEventListener('DOMContentLoaded', function() {
       gardensShowItem();
     }
   });
-});
-
-$(document).ready(function() {
-
-/*   if ($('.aboutSlider__wrapper').length) {
-		var aboutSlider = new Swiper($('.aboutSlider__wrapper'), {
-			direction: 'horizontal',
-			speed: 400,
-      slidesPerView: 'auto',
-      centeredSlides: true,
-      spaceBetween: 100,
-			loop: true,
-      slideToClickedSlide: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        renderBullet: function (index, className) {
-          return '<div class="' + className + '"><span></span></div>';
-        },
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-		});
-	} */
 });
