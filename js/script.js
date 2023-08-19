@@ -1,67 +1,107 @@
-$(document).ready(function() {
-  var header = $('.header').clone();
-  $('.header__fixed').html(header);
+document.addEventListener('DOMContentLoaded', function() {
+  /* Копирование и показ хедера */
+  var header, headerClone, headerFixed;
+
+  header = document.querySelector('.header');
+  headerClone = header.cloneNode(true);
+  headerFixed = document.querySelector('.header__fixed');
+  
+  headerFixed.appendChild(headerClone);
 
   function showHeaderFix() {
-    if ($(this).scrollTop() > 150) {
-      $('.header__fixed').addClass('show');
+    if (window.pageYOffset > 150) {
+      headerFixed.classList.add('show');
     } else {
-      $('.header__fixed').removeClass('show');
+      headerFixed.classList.remove('show');
     }
   }
 
   showHeaderFix();
-  $(window).scroll(function() {
-    showHeaderFix();
-  });
 
-  $(document).on('click', '.js-scroll-down', function() {
-    $('html, body').animate({
-      scrollTop: $('.gardens').offset().top - 150
-    }, 500);
-  });
+  /* Кнопка скролла к началу страницы */
+  var buttonTop;
 
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 500) {
-      $('.button__top').addClass('show');
+  buttonTop = document.querySelector('.button__top');
+
+  function showButtonTop() {
+    if (window.pageYOffset > 500) {
+      buttonTop.classList.add('show');
     } else {
-      $('.button__top').removeClass('show');
+      buttonTop.classList.remove('show');
     }
+  }
+
+  showButtonTop();
+
+  buttonTop.addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
   });
 
-  $(document).on('click', '.js-scroll-top', function() {
-    $('html, body').animate({
-      scrollTop: $('html').offset().top
-    }, 1000);
-  });
+  /* Показ садов из списка при скролле */
+  var gardens, gardensElements;
+
+  gardens = document.querySelector('.gardens');
+  gardensElements = gardens.querySelectorAll('.gardens__item');
 
   function gardensShowItem() {
-    $('.gardens__wrapper .gardens__item').each(function() {
-      if ($(window).scrollTop() >= $(this).offset().top - ($(window).height() - 100)) {
-        $(this).addClass('show');
+    gardensElements.forEach(function (item) {
+      if ((window.pageYOffset >= item.offsetTop - window.innerHeight + 250) && (item.offsetParent !== null)) {
+        item.classList.add('show');
       } else {
-        $(this).removeClass('show');
+        item.classList.remove('show');
       }
     });
   }
 
   gardensShowItem();
+
+  /* Показ садов из списка при нажатии на кнопку "Все сады" */
+  var gardensList, moreGardensList, moreGardensElements, moreGardensButton;
+
+  gardensList = gardens.querySelector('.gardens__wrapper');
+  moreGardensList = gardens.querySelector('.gardens__more');
+  moreGardensElements = moreGardensList.querySelectorAll('.gardens__item');
+  moreGardensButton = document.querySelector('.js-more-gardens');
   
-  $(window).scroll(function() {
-    gardensShowItem();
-  });
-
-  $(document).on('click', '.js-more-gardens', function() {
-    var moreGardens = $('.gardens__more').html();
-    $('.gardens__wrapper').append(moreGardens);
+  moreGardensButton.addEventListener('click', function() {
+    moreGardensElements.forEach(function (item) {
+      gardensList.appendChild(item);
+    });
 
     gardensShowItem();
 
-    $('.gardens__more').remove();
-    $(this).parent().fadeOut(300);
-    $('.gardens').css('margin-bottom', 116);
+    moreGardensList.remove();
+    moreGardensButton.parentNode.remove();
+    gardens.style.marginBottom = "116px";
   });
 
+  /* Скролл до списка с садами */
+  var scrollDownFirstScreen;
+
+  scrollDownFirstScreen = document.querySelector('.js-scroll-down');
+
+  scrollDownFirstScreen.addEventListener('click', function() {
+    window.scrollTo({
+        top: gardens.offsetTop - 150,
+        behavior: 'smooth'
+      });
+  });
+
+  /* Повторное выполнение функций при скролле */
+  document.addEventListener('scroll', function() {
+    // Показ хедера
+    showHeaderFix();
+    // Кнопка скролла к началу страницы
+    showButtonTop();
+    // Показ садов из списка при скролле
+    gardensShowItem();
+  });
+});
+
+$(document).ready(function() {
   // Табы на детальной транице сада
   $(document).on('click', '.js-garden-tab', function() {
     var $this = $(this),
